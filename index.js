@@ -12,6 +12,6 @@ var app = express();
 app.use(bodyParser.json());
 app.use(cors({ origin: 'http://localhost:4200'}));
 
-app.listen(49160, () => console.log('Server Started at port : 49160'));
+app.listen(49160, () => console.log('Server Started at port number: 49160'));
 
 app.use('/employees', employeeController);
