@@ -1,10 +1,10 @@
-name: Nodeapp Push github packages
+name: Demo Push github packages
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
     # Publish `v1.2.3` tags as releases.
     tags:
