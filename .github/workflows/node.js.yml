@@ -13,6 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
 
     strategy:
       matrix:
@@ -28,6 +29,11 @@ jobs:
     - run: npm i --save-dev jasmine
     - run: npm run build --if-present
     - run: npm test
+    - name: Cypress run
+      uses: cypress-io/github-action@v2
+      with:
+        # Specify Browser since container image is compile with Firefox
+        browser: chrome
     - name: Login to Docker Hub
       uses: docker/login-action@v1
       with:
